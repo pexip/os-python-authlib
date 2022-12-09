@@ -1,0 +1,58 @@
+From: Stefano Rivera <stefanor@debian.org>
+Date: Tue, 18 Aug 2020 17:35:53 -0700
+Subject: Use the default theme
+
+sphinx_typlog_theme isn't packaged in Debian, yet.
+
+Forwarded: not-needed
+---
+ docs/conf.py | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index 70cd76f..c70b16f 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -3,7 +3,7 @@ import sys
+ sys.path.insert(0, os.path.abspath('..'))
+ 
+ import authlib
+-import sphinx_typlog_theme
++#import sphinx_typlog_theme
+ 
+ extensions = ['sphinx.ext.autodoc']
+ templates_path = ['_templates']
+@@ -39,9 +39,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+ # The name of the Pygments (syntax highlighting) style to use.
+ pygments_style = 'sphinx'
+ 
+-html_theme = 'sphinx_typlog_theme'
++#html_theme = 'sphinx_typlog_theme'
+ html_favicon = '_static/favicon.ico'
+-html_theme_path = [sphinx_typlog_theme.get_path()]
++#html_theme_path = [sphinx_typlog_theme.get_path()]
+ html_theme_options = {
+     'logo': 'authlib.svg',
+     'color': '#3E7FCB',
+@@ -82,9 +82,9 @@ if '.dev' in release:
+     )
+     html_theme_options['warning'] = version_warning
+ 
+-html_sidebars = {
+-    '**': _sidebar_templates
+-}
++#html_sidebars = {
++#    '**': _sidebar_templates
++#}
+ 
+ # -- Options for HTMLHelp output ------------------------------------------
+ 
+@@ -134,5 +134,6 @@ html_js_files = [
+ 
+ 
+ def setup(app):
+-    sphinx_typlog_theme.add_badge_roles(app)
+-    sphinx_typlog_theme.add_github_roles(app, 'lepture/authlib')
++    #sphinx_typlog_theme.add_badge_roles(app)
++    #sphinx_typlog_theme.add_github_roles(app, 'lepture/authlib')
++    pass

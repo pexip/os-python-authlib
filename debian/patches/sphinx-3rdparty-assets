@@ -1,0 +1,116 @@
+From: Stefano Rivera <stefanor@debian.org>
+Date: Tue, 18 Aug 2020 18:01:29 -0700
+Subject: Disable 3rd party assets in docs
+
+Fetching assets from external websites can cause a privacy breach.
+
+Bug-Upstream: https://github.com/lepture/authlib/issues/282
+---
+ docs/_templates/funding.html  | 2 --
+ docs/_templates/sponsors.html | 4 ++--
+ docs/_templates/tidelift.html | 2 --
+ docs/conf.py                  | 6 +++---
+ docs/oauth/1/intro.rst        | 5 ++---
+ docs/oauth/2/intro.rst        | 5 ++---
+ 6 files changed, 9 insertions(+), 15 deletions(-)
+
+diff --git a/docs/_templates/funding.html b/docs/_templates/funding.html
+index 5de39b4..8f5dc1b 100644
+--- a/docs/_templates/funding.html
++++ b/docs/_templates/funding.html
+@@ -13,8 +13,6 @@
+ </style>
+ <div class="funding-sponsors">
+   <a href="https://auth0.com/overview?utm_source=authlib&utm_medium=devsponsor&utm_campaign=authlib">
+-    <img alt="Auth0"
+-         src="https://user-images.githubusercontent.com/290496/39297078-89d00928-497d-11e8-8119-0c53afe14cd0.png">
+     <div>Auth0</div>
+   </a>
+ </div>
+diff --git a/docs/_templates/sponsors.html b/docs/_templates/sponsors.html
+index 249fbf9..5231722 100644
+--- a/docs/_templates/sponsors.html
++++ b/docs/_templates/sponsors.html
+@@ -1,10 +1,10 @@
+ <div class="sponsors">
+   <div class="sponsor">
+-    <a class="image" href="https://authlib.org/plans?utm_source=docs"><img src="https://authlib.org/assets/logo-blue.svg" alt="Authlib"></a>
++    <a class="image" href="https://authlib.org/plans?utm_source=docs"><img src="_static/authlib.svg" alt="Authlib"></a>
+     <div class="text">Get a commercial license at <a href="https://authlib.org/plans?utm_source=docs">authlib.org</a></div>
+   </div>
+   <div class="sponsor">
+-    <a class="image" href="https://auth0.com/overview?utm_source=authlib&utm_medium=devsponsor&utm_campaign=authlib"><img src="https://user-images.githubusercontent.com/290496/39297078-89d00928-497d-11e8-8119-0c53afe14cd0.png" alt="Sponsor"></a>
++    <a class="image" href="https://auth0.com/overview?utm_source=authlib&utm_medium=devsponsor&utm_campaign=authlib">
+     <div class="text">The new way to solve Identity. Sponsored by <a href="https://auth0.com/overview?utm_source=authlib&utm_medium=devsponsor&utm_campaign=authlib">auth0.com</a></div>
+   </div>
+   <div class="patron">
+diff --git a/docs/_templates/tidelift.html b/docs/_templates/tidelift.html
+index 3fe26be..c2f0e34 100644
+--- a/docs/_templates/tidelift.html
++++ b/docs/_templates/tidelift.html
+@@ -1,7 +1,5 @@
+ <div class="sponsors">
+   <div class="sponsor">
+-    <a class="image" href="https://tidelift.com/subscription/pkg/pypi-authlib?utm_source=pypi-authlib&amp;utm_medium=referral&amp;utm_campaign=docs">
+-      <img src="https://user-images.githubusercontent.com/2379650/45126032-50b69880-b13f-11e8-9c2c-abd16c433495.png" alt="Sponsor"></a>
+     <div class="text">Professionally-supported Authlib is available with the
+       <a href="https://tidelift.com/subscription/pkg/pypi-authlib?utm_source=pypi-authlib&amp;utm_medium=referral&amp;utm_campaign=docs">Tidelift Subscription</a>.
+     </div>
+diff --git a/docs/conf.py b/docs/conf.py
+index c70b16f..a8a55e5 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -49,8 +49,8 @@ html_theme_options = {
+         'The ultimate Python library in building OAuth and OpenID Connect '
+         'servers. JWS, JWE, JWK, JWA, JWT are included.'
+     ),
+-    'github_user': 'lepture',
+-    'github_repo': 'authlib',
++    #'github_user': 'lepture',
++    #'github_repo': 'authlib',
+     'twitter': 'authlib',
+     'og_image': 'https://authlib.org/logo.png',
+     'meta_html': (
+@@ -129,7 +129,7 @@ html_css_files = [
+     'sponsors.css',
+ ]
+ html_js_files = [
+-    'sponsors.js',
++#    'sponsors.js',
+ ]
+ 
+ 
+diff --git a/docs/oauth/1/intro.rst b/docs/oauth/1/intro.rst
+index bf4e12d..360f2dc 100644
+--- a/docs/oauth/1/intro.rst
++++ b/docs/oauth/1/intro.rst
+@@ -24,10 +24,9 @@ concepts in OAuth 1.0, the authorization flow of OAuth 1.0, and etc.
+ 
+ .. _RFC5849: https://tools.ietf.org/html/rfc5849
+ 
+-Here is an overview of a typical OAuth 1.0 authorization flow:
++Here is an overview of a `typical OAuth 1.0 authorization flow`_:
+ 
+-.. figure:: https://user-images.githubusercontent.com/290496/48671968-2c316080-eb73-11e8-9e6a-9e895cd67262.png
+-    :alt: OAuth 1.0 Flow
++.. _typical OAuth 1.0 authorization flow: https://user-images.githubusercontent.com/290496/48671968-2c316080-eb73-11e8-9e6a-9e895cd67262.png
+ 
+ OAuth 1.0 Flow
+ --------------
+diff --git a/docs/oauth/2/intro.rst b/docs/oauth/2/intro.rst
+index 9e4f203..02e164a 100644
+--- a/docs/oauth/2/intro.rst
++++ b/docs/oauth/2/intro.rst
+@@ -15,10 +15,9 @@ Introduce OAuth 2.0
+     its own behalf.
+ 
+ This section will help developers understand the concepts in OAuth 2.0, but not
+-in deep of OAuth 2.0. Here is an overview of a very simple OAuth 2.0 flow:
++in deep of OAuth 2.0. Here is an overview of a `very simple OAuth 2.0 flow`_:
+ 
+-.. figure:: https://user-images.githubusercontent.com/290496/48670041-e5803e00-eb53-11e8-91a9-3776276d6bf6.png
+-    :alt: OAuth 2.0 Flow
++.. _very simple OAuth 2.0 flow: https://user-images.githubusercontent.com/290496/48670041-e5803e00-eb53-11e8-91a9-3776276d6bf6.png
+ 
+ 
+ OAuth 2.0 Roles

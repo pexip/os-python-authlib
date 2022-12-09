@@ -1,0 +1,15 @@
+#!/bin/sh
+set -efu
+
+pys="$(py3versions -r 2> /dev/null)"
+
+cp -a setup.cfg tests "$AUTOPKGTEST_TMP"
+
+cd "$AUTOPKGTEST_TMP"
+
+for py in $pys; do
+	echo "=== $py ==="
+	$py -m pytest tests/core 2>&1
+	DJANGO_SETTINGS_MODULE=tests.django.settings $py -m pytest tests/django 2>&1
+	$py -m pytest tests/flask 2>&1
+done

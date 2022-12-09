@@ -1,0 +1,103 @@
+python-authlib (1.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Correct copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 09 Dec 2022 18:08:37 -0400
+
+python-authlib (1.1.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + python-authlib-doc: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 22 Oct 2022 11:44:37 +0100
+
+python-authlib (1.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.6.1, no changes needed.
+  * Bump copyright years.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 25 Sep 2022 10:55:06 +0200
+
+python-authlib (1.0.1-1) unstable; urgency=high
+
+  * New upstream release.
+    - Resolving a security bug in JWT validation (no CVE).
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 08 Apr 2022 11:57:52 -0400
+
+python-authlib (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+  * Build with pybuild-plugin-pyproject.
+  * Support nodoc builds.
+  * Depend and Build-Depends on python3-pycryptodome for XC20P support.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 18 Mar 2022 09:39:02 -0400
+
+python-authlib (0.15.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop patch werkzeug-2.0.0, superseded upstream.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 19 Oct 2021 20:45:42 -0700
+
+python-authlib (0.15.4-2) unstable; urgency=medium
+
+  * Patch: Support werkzeug >= 2.0.0.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+  * Bump debhelper compat level to 13.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 12 Oct 2021 00:54:43 -0700
+
+python-authlib (0.15.4-1) unstable; urgency=medium
+
+  * New upstream point release, fixing a security issue.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 07 Jul 2021 19:32:08 -0400
+
+python-authlib (0.15.3-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+  * Bump Standards-Version to 4.5.1, no changes needed.
+  * Bump copyright years.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 20 Jan 2021 11:21:23 -0700
+
+python-authlib (0.15.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add upstream metadata.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 30 Oct 2020 11:56:19 -0700
+
+python-authlib (0.15.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+  * Build-Depend on python3-itsdangerous for tests.
+  * Drop Build-Depends for starelette test suite, not shipped in upstream
+    source.
+  * Run the 3 test suites separately, as upstream does. They fail otherwise.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 14 Oct 2020 21:16:12 -0700
+
+python-authlib (0.14.3-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Update Maintainer email for DPMT & PAPT merger.
+  * Update Vcs URLs for DPMT & PAPT merger.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 23 Sep 2020 13:36:52 -0700
+
+python-authlib (0.14.3-1) experimental; urgency=low
+
+  * Initial Release (Closes: #968644)
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 19 Aug 2020 15:14:48 -0700

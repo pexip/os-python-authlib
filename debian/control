@@ -1,0 +1,48 @@
+Source: python-authlib
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Stefano Rivera <stefanor@debian.org>
+Section: python
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ dh-sequence-sphinxdoc <!nodoc>,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-cryptography,
+ python3-django,
+ python3-flask,
+ python3-flask-sqlalchemy,
+ python3-itsdangerous,
+ python3-mock,
+ python3-pycryptodome,
+ python3-pytest,
+ python3-pytest-django,
+ python3-requests,
+ python3-setuptools,
+ python3-sphinx <!nodoc>
+Standards-Version: 4.6.1
+Homepage: https://authlib.org/
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-authlib.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-authlib
+Rules-Requires-Root: no
+
+Package: python3-authlib
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-pycryptodome
+Description: Python library for OAuth and OpenID Connect servers
+ The ultimate Python library in building OAuth and OpenID Connect servers. It
+ is designed from low level specifications implementations to high level
+ frameworks integrations, to meet the needs of everyone.
+
+Package: python-authlib-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Multi-Arch: foreign
+Description: Python library for OAuth and OpenID Connect servers (docs)
+ The ultimate Python library in building OAuth and OpenID Connect servers. It
+ is designed from low level specifications implementations to high level
+ frameworks integrations, to meet the needs of everyone.
+ .
+ This package contains the documentation for python3-authlib.

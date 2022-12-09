@@ -1,0 +1,12 @@
+---
+Bug-Database: https://github.com/lepture/authlib/issues
+Bug-Submit: https://github.com/lepture/authlib/issues/new
+Changelog: https://docs.authlib.org/en/latest/changelog.html
+Documentation: https://docs.authlib.org/
+Donation: https://github.com/users/lepture/sponsorship
+Registry:
+  - Name: PyPI
+    Entry: Authlib
+Repository-Browse: https://github.com/lepture/authlib/
+Repository: https://github.com/lepture/authlib.git
+Security-Contact: me@lepture.com

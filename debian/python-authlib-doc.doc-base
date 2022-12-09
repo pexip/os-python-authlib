@@ -1,0 +1,12 @@
+Document: python-authlib-doc
+Title: Authlib Documentation
+Author: Hsiaoming Yang
+Abstract: Python library for OAuth and OpenID Connect servers
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-authlib-doc/html/index.html
+Files: /usr/share/doc/python-authlib-doc/html/*.html
+
+Format: Text
+Files: /usr/share/doc/python-authlib-doc/rst/*.txt
