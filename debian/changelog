@@ -1,6 +1,7 @@
 python-authlib (1.2.0-1pexip1) pexip; urgency=medium
 
   * Prepare Pexip packaging
+  * Drop XC20P support
 
  -- Huw Jones <huw@pexip.com>  Tue, 08 Aug 2023 10:22:57 +0100
 

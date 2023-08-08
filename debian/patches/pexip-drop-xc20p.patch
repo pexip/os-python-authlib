@@ -1,0 +1,18 @@
+--- a/requirements-docs.txt
++++ b/requirements-docs.txt
+@@ -1,5 +1,4 @@
+ cryptography
+-pycryptodomex>=3.10,<4
+ Flask
+ Django
+ SQLAlchemy
+--- a/tox.ini
++++ b/tox.ini
+@@ -8,7 +8,6 @@
+ [testenv]
+ deps =
+     -r tests/requirements-base.txt
+-    jose: pycryptodomex>=3.10,<4
+     clients: -r tests/requirements-clients.txt
+     flask: -r tests/requirements-flask.txt
+     django: -r tests/requirements-django.txt
