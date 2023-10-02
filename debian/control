@@ -30,7 +30,7 @@ XS-Pexip-Upstream: http://ftp.debian.org/debian/ bookworm
 
 Package: python3-authlib
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}, python3-pycryptodome
+Depends: ${misc:Depends}, ${python3:Depends}
 Description: Python library for OAuth and OpenID Connect servers
  The ultimate Python library in building OAuth and OpenID Connect servers. It
  is designed from low level specifications implementations to high level

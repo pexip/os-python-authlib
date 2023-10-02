@@ -1,3 +1,9 @@
+python-authlib (1.2.0-1pexip2) pexip; urgency=medium
+
+  * Drop python3-pycryptodome dependency
+
+ -- Huw Jones <huw@pexip.com>  Mon, 02 Oct 2023 11:17:40 +0100
+
 python-authlib (1.2.0-1pexip1) pexip; urgency=medium
 
   * Prepare Pexip packaging
