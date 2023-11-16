@@ -1,3 +1,9 @@
+python-authlib (1.2.0-1pexip3) pexip-bookworm; urgency=medium
+
+  * Initial bookworm build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 16 Nov 2023 10:21:45 +0000
+
 python-authlib (1.2.0-1pexip2) pexip; urgency=medium
 
   * Drop python3-pycryptodome dependency
