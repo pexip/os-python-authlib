@@ -1,3 +1,9 @@
+python-authlib (1.2.0-1pexip4) pexip-bookworm; urgency=medium
+
+  * Bookworm build for product distribution
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Sat, 09 Dec 2023 22:57:14 +0000
+
 python-authlib (1.2.0-1pexip3) pexip-bookworm; urgency=medium
 
   * Initial bookworm build
