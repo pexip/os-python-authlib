@@ -1,3 +1,5 @@
 sphinx-default-theme
 sphinx-3rdparty-assets
 pexip-drop-xc20p.patch
+CVE-2024-37568.patch
+
