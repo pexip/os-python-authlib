@@ -1,3 +1,9 @@
+python-authlib (1.2.0-1+pexip24u7) pexip; urgency=medium
+
+  * RFC6749: improve client error details
+
+ -- Huw Jones <huw@pexip.com>  Tue, 29 Oct 2024 15:44:08 +0000
+
 python-authlib (1.2.0-1+pexip24u6) pexip; urgency=medium
 
   * Apply fix for CVE-2024-37568
