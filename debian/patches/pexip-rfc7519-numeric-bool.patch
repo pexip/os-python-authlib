@@ -1,0 +1,10 @@
+diff --git a/authlib/jose/rfc7519/claims.py b/authlib/jose/rfc7519/claims.py
+index 037d56f..3f67eb1 100644
+--- a/authlib/jose/rfc7519/claims.py
++++ b/authlib/jose/rfc7519/claims.py
+@@ -219,4 +219,4 @@ class JWTClaims(BaseClaims):
+ 
+ 
+ def _validate_numeric_time(s):
+-    return isinstance(s, (int, float))
++    return isinstance(s, (int, float)) and not isinstance(s, bool)

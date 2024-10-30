@@ -3,3 +3,4 @@ sphinx-3rdparty-assets
 pexip-drop-xc20p.patch
 CVE-2024-37568.patch
 pexip-rfc6749-errors.patch
+pexip-rfc7519-numeric-bool.patch
