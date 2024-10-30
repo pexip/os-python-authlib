@@ -1,0 +1,13 @@
+diff --git a/authlib/common/errors.py b/authlib/common/errors.py
+index bc72c07..369d6a1 100644
+--- a/authlib/common/errors.py
++++ b/authlib/common/errors.py
+@@ -45,6 +45,8 @@ class AuthlibHTTPError(AuthlibBaseError):
+ 
+         if self.description:
+             error.append(('error_description', self.description))
++        elif isinstance(self.__cause__, AuthlibBaseError):
++            error.append(('error_description', self.__cause__.error))
+ 
+         if self.uri:
+             error.append(('error_uri', self.uri))
