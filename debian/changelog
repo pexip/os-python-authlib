@@ -2,6 +2,7 @@ python-authlib (1.2.0-1+pexip24u7) pexip; urgency=medium
 
   * RFC6749: improve client error details
   * RFC7519: reject bools as valid numeric time
+  * RFC7523: improve client error when assertion validation fails
 
  -- Huw Jones <huw@pexip.com>  Tue, 29 Oct 2024 15:44:08 +0000
 
