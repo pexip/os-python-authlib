@@ -1,13 +1,18 @@
 Tests: unittests3
 Depends:
  python3-all,
+ python3-anyio,
  python3-authlib,
+ python3-cachelib,
  python3-cryptography,
  python3-django,
  python3-flask,
  python3-flask-sqlalchemy,
+ python3-httpx,
  python3-itsdangerous,
- python3-mock,
  python3-pytest,
+ python3-pytest-asyncio,
  python3-pytest-django,
- python3-requests
+ python3-requests,
+ python3-starlette,
+ python3-werkzeug

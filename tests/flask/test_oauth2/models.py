@@ -1,11 +1,10 @@
-import time
 from flask_sqlalchemy import SQLAlchemy
-from authlib.integrations.sqla_oauth2 import (
-    OAuth2ClientMixin,
-    OAuth2TokenMixin,
-    OAuth2AuthorizationCodeMixin,
-)
+
+from authlib.integrations.sqla_oauth2 import OAuth2AuthorizationCodeMixin
+from authlib.integrations.sqla_oauth2 import OAuth2ClientMixin
+from authlib.integrations.sqla_oauth2 import OAuth2TokenMixin
 from authlib.oidc.core import UserInfo
+
 db = SQLAlchemy()
 
 
@@ -17,19 +16,17 @@ class User(db.Model):
         return self.id
 
     def check_password(self, password):
-        return password != 'wrong'
+        return password != "wrong"
 
     def generate_user_info(self, scopes):
-        profile = {'sub': str(self.id), 'name': self.username}
+        profile = {"sub": str(self.id), "name": self.username}
         return UserInfo(profile)
 
 
 class Client(db.Model, OAuth2ClientMixin):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(
-        db.Integer, db.ForeignKey('user.id', ondelete='CASCADE')
-    )
-    user = db.relationship('User')
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"))
+    user = db.relationship("User")
 
 
 class AuthorizationCode(db.Model, OAuth2AuthorizationCodeMixin):
@@ -38,24 +35,23 @@ class AuthorizationCode(db.Model, OAuth2AuthorizationCodeMixin):
 
     @property
     def user(self):
-        return User.query.get(self.user_id)
+        return db.session.get(User, self.user_id)
 
 
 class Token(db.Model, OAuth2TokenMixin):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(
-        db.Integer, db.ForeignKey('user.id', ondelete='CASCADE')
-    )
-    user = db.relationship('User')
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"))
+    user = db.relationship("User")
 
     def is_refresh_token_active(self):
         return not self.refresh_token_revoked_at
 
 
-class CodeGrantMixin(object):
+class CodeGrantMixin:
     def query_authorization_code(self, code, client):
         item = AuthorizationCode.query.filter_by(
-            code=code, client_id=client.client_id).first()
+            code=code, client_id=client.client_id
+        ).first()
         if item and not item.is_expired():
             return item
 
@@ -64,7 +60,7 @@ class CodeGrantMixin(object):
         db.session.commit()
 
     def authenticate_user(self, authorization_code):
-        return User.query.get(authorization_code.user_id)
+        return db.session.get(User, authorization_code.user_id)
 
 
 def save_authorization_code(code, request):
@@ -74,10 +70,10 @@ def save_authorization_code(code, request):
         client_id=client.client_id,
         redirect_uri=request.redirect_uri,
         scope=request.scope,
-        nonce=request.data.get('nonce'),
+        nonce=request.data.get("nonce"),
         user_id=request.user.id,
-        code_challenge=request.data.get('code_challenge'),
-        code_challenge_method = request.data.get('code_challenge_method'),
+        code_challenge=request.data.get("code_challenge"),
+        code_challenge_method=request.data.get("code_challenge_method"),
     )
     db.session.add(auth_code)
     db.session.commit()

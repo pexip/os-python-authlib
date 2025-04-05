@@ -4,11 +4,11 @@ Upstream-Contact: Hsiaoming Yang <me@lepture.com>
 Source: https://github.com/lepture/authlib
 
 Files: *
-Copyright: 2017-2022, Hsiaoming Yang
+Copyright: 2017-2025, Hsiaoming Yang
 License: BSD-3-clause
 
 Files: debian/*
-Copyright: 2020-2022, Stefano Rivera <stefanor@debian.org>
+Copyright: 2020-2025, Stefano Rivera <stefanor@debian.org>
 License: BSD-3-clause
 
 License: BSD-3-clause
