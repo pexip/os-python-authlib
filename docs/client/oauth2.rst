@@ -203,7 +203,7 @@ These two methods are defined by RFC7523 and OpenID Connect. Find more in
 :ref:`jwt_oauth2session`.
 
 There are still cases that developers need to define a custom client
-authentication method. Take :gh:`issue#158` as an example, the provider
+authentication method. Take :issue:`158` as an example, the provider
 requires us put ``client_id`` and ``client_secret`` on URL when sending
 POST request::
 
@@ -279,6 +279,10 @@ it has expired::
 
     >>> openid_configuration = requests.get("https://example.org/.well-known/openid-configuration").json()
     >>> session = OAuth2Session(…, token_endpoint=openid_configuration["token_endpoint"])
+
+By default, the token will be refreshed 60 seconds before its actual expiry time, to avoid clock skew issues.
+You can control this behaviour by setting the ``leeway`` parameter of the :class:`~requests_client.OAuth2Session`
+class.
 
 Manually refreshing tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
