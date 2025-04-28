@@ -1,25 +1,20 @@
-diff --git a/authlib/oauth2/rfc7523/client.py b/authlib/oauth2/rfc7523/client.py
-index 8127c7b..9838242 100644
---- a/authlib/oauth2/rfc7523/client.py
-+++ b/authlib/oauth2/rfc7523/client.py
-@@ -1,6 +1,6 @@
+--- python-authlib.orig/authlib/oauth2/rfc7523/client.py
++++ python-authlib/authlib/oauth2/rfc7523/client.py
+@@ -1,7 +1,7 @@
  import logging
+ 
  from authlib.jose import jwt
 -from authlib.jose.errors import JoseError
 +from authlib.jose.errors import JoseError, DecodeError
+ 
  from ..rfc6749 import InvalidClientError
  
- ASSERTION_TYPE = 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
-@@ -62,9 +62,11 @@ class JWTBearerClientAssertion(object):
-                 claims_options=self.create_claims_options()
+@@ -68,6 +68,8 @@ class JWTBearerClientAssertion:
+                 assertion, resolve_key, claims_options=self.create_claims_options()
              )
-             claims.validate()
+             claims.validate(leeway=self.leeway)
 +        except DecodeError as e:
 +            raise InvalidClientError(description="invalid_assertion") from e
          except JoseError as e:
-             log.debug('Assertion Error: %r', e)
--            raise InvalidClientError()
-+            raise InvalidClientError() from e
-         return claims
- 
-     def authenticate_client(self, client):
+             log.debug("Assertion Error: %r", e)
+             raise InvalidClientError(description=e.description) from e

@@ -1,32 +1,32 @@
-diff --git a/authlib/oauth2/rfc6749/authenticate_client.py b/authlib/oauth2/rfc6749/authenticate_client.py
-index a61113b..b7e7d88 100644
---- a/authlib/oauth2/rfc6749/authenticate_client.py
-+++ b/authlib/oauth2/rfc6749/authenticate_client.py
-@@ -16,7 +16,7 @@
- """
+--- python-authlib.orig/authlib/oauth2/rfc6749/authenticate_client.py
++++ python-authlib/authlib/oauth2/rfc6749/authenticate_client.py
+@@ -16,7 +16,7 @@ but the concept of naming are introduced
  
  import logging
+ 
 -from .errors import InvalidClientError
 +from .errors import InvalidClientError, UnsupportedAssertionError
  from .util import extract_basic_authorization
  
  log = logging.getLogger(__name__)
-@@ -45,8 +45,8 @@ class ClientAuthentication(object):
+@@ -45,12 +45,12 @@ class ClientAuthentication:
                  return client
  
-         if 'client_secret_basic' in methods:
--            raise InvalidClientError(state=request.state, status_code=401)
--        raise InvalidClientError(state=request.state)
-+            raise UnsupportedAssertionError(state=request.state, status_code=401)
-+        raise UnsupportedAssertionError(state=request.state)
- 
-     def __call__(self, request, methods, endpoint='token'):
-         return self.authenticate(request, methods, endpoint)
-diff --git a/authlib/oauth2/rfc6749/errors.py b/authlib/oauth2/rfc6749/errors.py
-index 53c2dff..9feaaa0 100644
---- a/authlib/oauth2/rfc6749/errors.py
-+++ b/authlib/oauth2/rfc6749/errors.py
-@@ -101,6 +101,12 @@ class InvalidClientError(OAuth2Error):
+         if "client_secret_basic" in methods:
+-            raise InvalidClientError(
++            raise UnsupportedAssertionError(
+                 state=request.state,
+                 status_code=401,
+                 description=f"The client cannot authenticate with methods: {methods}",
+             )
+-        raise InvalidClientError(
++        raise UnsupportedAssertionError(
+             state=request.state,
+             description=f"The client cannot authenticate with methods: {methods}",
+         )
+--- python-authlib.orig/authlib/oauth2/rfc6749/errors.py
++++ python-authlib/authlib/oauth2/rfc6749/errors.py
+@@ -110,6 +110,12 @@ class InvalidClientError(OAuth2Error):
          return headers
  
  
