@@ -8,13 +8,17 @@ export PYBUILD_TEST_PYTEST=1
 
 override_dh_auto_test:
 	dh_auto_test -- --test-pytest --test-args tests/core
+	DJANGO_SETTINGS_MODULE=tests.clients.test_django.settings \
+		http_proxy= https_proxy= \
+		dh_auto_test -- --test-pytest --test-args tests/clients
 	DJANGO_SETTINGS_MODULE=tests.django.settings \
 		dh_auto_test -- --test-pytest --test-args tests/django
 	dh_auto_test -- --test-pytest --test-args tests/flask
+	dh_auto_test -- --test-pytest --test-args tests/jose
 
 ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
 execute_after_dh_auto_build:
-	$(MAKE) -C docs html
+	PYTHONPATH=$(CURDIR) $(MAKE) -C docs html
 
 execute_after_dh_auto_clean:
 	$(MAKE) -C docs clean
