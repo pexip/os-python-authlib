@@ -28,7 +28,7 @@ Build-Depends:
  python3-sphinx-copybutton <!nodoc>,
  python3-sphinx-design <!nodoc>,
  python3-werkzeug <!nocheck> <!nodoc>
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://authlib.org/
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-authlib.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-authlib

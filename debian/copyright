@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Authlib
 Upstream-Contact: Hsiaoming Yang <me@lepture.com>
-Source: https://github.com/lepture/authlib
+Source: https://github.com/authlib/authlib
 
 Files: *
 Copyright: 2017-2025, Hsiaoming Yang

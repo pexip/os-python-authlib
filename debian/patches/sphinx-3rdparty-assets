@@ -4,7 +4,7 @@ Subject: Disable 3rd party assets in docs
 
 Fetching assets from external websites can cause a privacy breach.
 
-Bug-Upstream: https://github.com/lepture/authlib/issues/282
+Bug-Upstream: https://github.com/authlib/authlib/issues/282
 ---
  docs/_templates/funding.html  | 2 --
  docs/_templates/sponsors.html | 4 ++--
