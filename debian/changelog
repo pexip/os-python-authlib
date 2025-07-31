@@ -1,3 +1,11 @@
+python-authlib (1.6.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 4.7.2, no changes needed.
+  * Update GitHub repo: it now lives under its own org.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 24 May 2025 17:14:40 +0200
+
 python-authlib (1.5.2-1+pexip25u1) pexip-trixie; urgency=medium
 
   * Initial trixie build
