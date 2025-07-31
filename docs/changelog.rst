@@ -6,6 +6,18 @@ Changelog
 
 Here you can see the full list of changes between each Authlib release.
 
+Version 1.6.0
+-------------
+
+**Released on May 22, 2025**
+
+- Fix issue when :rfc:`RFC9207 <9207>` is enabled and the authorization endpoint response is not a redirection. :pr:`733`
+- Fix missing ``state`` parameter in authorization error responses. :issue:`525`
+- Support for ``acr`` and ``amr`` claims in ``id_token``. :issue:`734`
+- Support for the ``none`` JWS algorithm.
+- Fix ``response_types`` strict order during dynamic client registration. :issue:`760`
+- Implement :rfc:`RFC9101 The OAuth 2.0 Authorization Framework: JWT-Secured Authorization Request (JAR) <9101>`. :issue:`723`
+- OIDC :class:`UserInfo endpoint <authlib.oidc.core.userinfo.UserInfoEndpoint>` support. :issue:`459`
 
 Version 1.5.2
 -------------
@@ -14,8 +26,7 @@ Version 1.5.2
 
 - Forbid fragments in ``redirect_uris``. :issue:`714`
 - Fix invalid characters in ``error_description``. :issue:`720`
-- Add ``claims_cls``` parameter for client's ``parse_id_token`` method. :issue:`725`
-
+- Add ``claims_cls`` parameter for client's ``parse_id_token`` method. :issue:`725`
 
 Version 1.5.1
 -------------
@@ -105,7 +116,7 @@ Version 1.2.1
 - Allow falsy but non-None grant uri params, via :PR:`544`
 - Fixed ``authorize_redirect`` for Starlette v0.26.0, via :PR:`533`
 - Removed ``has_client_secret`` method and documentation, via :PR:`513`
-- Removed ``request_invalid`` and ``token_revoked`` remaining occurences
+- Removed ``request_invalid`` and ``token_revoked`` remaining occurrences
   and documentation. :PR:`514`
 - Fixed RFC7591 ``grant_types`` and ``response_types`` default values, via :PR:`509`.
 - Add support for python 3.12, via :PR:`590`.
@@ -197,7 +208,7 @@ Added ``ES256K`` algorithm for JWS and JWT.
 Old Versions
 ------------
 
-Find old changelog at https://github.com/lepture/authlib/releases
+Find old changelog at https://github.com/authlib/authlib/releases
 
 - Version 0.15.5: Released on Oct 18, 2021
 - Version 0.15.4: Released on Jul 17, 2021
