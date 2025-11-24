@@ -6,3 +6,6 @@ pexip-rfc6749-errors.patch
 pexip-rfc7519-numeric-bool.patch
 pexip-rfc7523-assertion-claims.patch
 pexip-common-error-cause.patch
+CVE-2025-59420.patch
+CVE-2025-61920.patch
+CVE-2025-62706.patch

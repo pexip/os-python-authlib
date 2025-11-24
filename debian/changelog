@@ -1,3 +1,15 @@
+python-authlib (1.2.0-1+pexip24u8) pexip; urgency=medium
+
+  * Backport CVE fixes.
+  * CVE-2025-59420:
+    https://github.com/authlib/authlib/commit/6b1813e4392eb7c168c276099ff7783b176479df
+  * CVE-2025-61920:
+    https://github.com/authlib/authlib/commit/867e3f87b072347a1ae9cf6983cc8bbf88447e5e
+  * CVE-2025-62706:
+    https://github.com/authlib/authlib/commit/4b5b5703394608124cd39e547cc7829feda05a13
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 24 Nov 2025 11:36:20 +0000
+
 python-authlib (1.2.0-1+pexip24u7) pexip; urgency=medium
 
   * RFC6749: improve client error details
