@@ -1,3 +1,5 @@
+Reject bools as valid numeric times
+
 diff --git a/authlib/jose/rfc7519/claims.py b/authlib/jose/rfc7519/claims.py
 index 037d56f..3f67eb1 100644
 --- a/authlib/jose/rfc7519/claims.py

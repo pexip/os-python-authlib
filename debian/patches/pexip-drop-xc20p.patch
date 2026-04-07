@@ -1,3 +1,5 @@
+Drop XC20P support as we do not require it
+
 --- python-authlib.orig/pyproject.toml
 +++ python-authlib/pyproject.toml
 @@ -78,7 +78,6 @@ flask = [

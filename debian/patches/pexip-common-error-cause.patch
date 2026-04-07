@@ -1,3 +1,6 @@
+Ensure that error cause is included in description when error comes from
+AuthLibBaseError
+
 --- python-authlib.orig/authlib/common/errors.py
 +++ python-authlib/authlib/common/errors.py
 @@ -43,6 +43,8 @@ class AuthlibHTTPError(AuthlibBaseError)

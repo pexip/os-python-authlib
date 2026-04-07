@@ -1,3 +1,5 @@
+Improve client error when assertion validation fails
+
 --- python-authlib.orig/authlib/oauth2/rfc7523/client.py
 +++ python-authlib/authlib/oauth2/rfc7523/client.py
 @@ -1,7 +1,7 @@
