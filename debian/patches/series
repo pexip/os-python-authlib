@@ -1,6 +1,10 @@
 sphinx-default-theme
 sphinx-3rdparty-assets
 sphinx-install-rst
+CVE-2025-68158.patch
+CVE-2025-62706.patch
+CVE-2025-61920.patch
+CVE-2025-59420.patch
 pexip-drop-xc20p.patch
 pexip-rfc6749-errors.patch
 pexip-rfc7519-numeric-bool.patch

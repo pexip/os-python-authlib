@@ -1,3 +1,26 @@
+python-authlib (1.6.0-1+deb13u1) trixie; urgency=medium
+
+  * Non-maintainer upload by the Debian LTS team.
+  * d/patches/CVE-2025-68158.patch: Add patch to fix CVE-2025-68158.
+    - The cache-backed state/request-token storage is not tied to the
+      initiating user session, so CSRF is possible for any attacker that has
+      a valid state.
+  * d/patches/CVE-2025-62706.patch: Add patch to fix CVE-2025-62706.
+    - Authlib’s JWE zip=DEF path performs unbounded DEFLATE decompression
+      which can lead to a DoS.
+  * d/patches/CVE-2025-61920.patch: Add patch to fix CVE-2025-61920.
+    - Authlib’s JOSE implementation accepts unbounded JWS/JWT header and
+      signature segments which can lead to a DoS during verification.
+  * d/patches/CVE-2025-59420.patch: Add patch to fix CVE-2025-59420.
+    - Authlib’s JWS verification accepts tokens that declare unknown critical
+      header parameters (crit), violating RFC 7515 “must‑understand” semantics.
+      An attacker can craft a signed token with a critical header that strict
+      verifiers reject but Authlib accepts. In mixed‑language fleets, this
+      enables split‑brain verification and can lead to policy bypass, replay,
+      or privilege escalation.
+
+ -- Daniel Leidert <dleidert@debian.org>  Mon, 02 Mar 2026 03:57:30 +0100
+
 python-authlib (1.6.0-1+pexip25u2) pexip-trixie; urgency=medium
 
   * Trixie build for product distribution
